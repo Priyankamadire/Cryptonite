@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from './Sidebar.tsx'
 
 const Layout = ({ children }) => {
   return (
@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
           {children}
       </div>
     </div>
-  );   
+  );
 };
 
 export default Layout;

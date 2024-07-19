@@ -8,12 +8,18 @@ import {
   HomeIcon,
   LogoIcon,
   LogoutIcon,
-  UsersIcon,
   AboutIcon,
-  RateGraphIcon
+  RateGraphIcon,
 } from "./icons";
 
-const menuItems = [
+interface MenuItem {
+  id: number;
+  label: string;
+  icon: React.FunctionComponent; // Use React.FunctionComponent for icons
+  link: string;
+}
+
+const menuItems: MenuItem[] = [
   { id: 1, label: "Dashboard", icon: HomeIcon, link: "/" },
   { id: 4, label: "About Page", icon: AboutIcon, link: "/about" },
   { id: 5, label: "Changing Rate", icon: RateGraphIcon, link: "/rates" },
@@ -21,9 +27,9 @@ const menuItems = [
   { id: 3, label: "Graph Rate", icon: RateGraphIcon, link: "/coin/[id]" },
 ];
 
-const Sidebar = () => {
-  const [toggleCollapse, setToggleCollapse] = useState(false);
-  const [isCollapsible, setIsCollapsible] = useState(false);
+const Sidebar: React.FunctionComponent = () => {
+  const [toggleCollapse, setToggleCollapse] = useState<boolean>(false);
+  const [isCollapsible, setIsCollapsible] = useState<boolean>(false);
 
   const router = useRouter();
 
@@ -35,8 +41,8 @@ const Sidebar = () => {
   const wrapperClasses = classNames(
     "h-screen px-4 pt-8 pb-4 bg-light flex justify-between flex-col",
     {
-      ["w-80"]: !toggleCollapse,
-      ["w-20"]: toggleCollapse,
+      "w-80": !toggleCollapse,
+      "w-20": toggleCollapse,
     }
   );
 
@@ -47,11 +53,11 @@ const Sidebar = () => {
     }
   );
 
-  const getNavItemClasses = (menu) => {
+  const getNavItemClasses = (menu: MenuItem) => {
     return classNames(
       "flex items-center cursor-pointer hover:bg-light-lighter rounded w-full overflow-hidden whitespace-nowrap",
       {
-        ["bg-light-lighter"]: activeMenu.id === menu.id,
+        "bg-light-lighter": activeMenu?.id === menu.id,
       }
     );
   };
@@ -94,21 +100,18 @@ const Sidebar = () => {
         </div>
 
         <div className="flex flex-col items-start mt-24">
-          {menuItems.map(({ icon: Icon, ...menu }) => {
+          {menuItems.map((menu) => {
+            const { icon: Icon, ...rest } = menu;
             const classes = getNavItemClasses(menu);
             return (
               <div key={menu.id} className={classes}>
-                <Link href={menu.link}>
+                <Link href={menu.link} passHref>
                   <a className="flex py-4 px-3 items-center w-full h-full">
                     <div style={{ width: "2.5rem" }}>
                       <Icon />
                     </div>
                     {!toggleCollapse && (
-                      <span
-                        className={classNames(
-                          "text-md font-medium text-text-light"
-                        )}
-                      >
+                      <span className="text-md font-medium text-text-light">
                         {menu.label}
                       </span>
                     )}
@@ -120,9 +123,8 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className={`${getNavItemClasses({})} px-3 py-4`}>
-       
-         
+      <div className={`${getNavItemClasses({ id: -1, label: "", icon: LogoutIcon, link: "" })} px-3 py-4`}>
+        <LogoutIcon />
       </div>
     </div>
   );
