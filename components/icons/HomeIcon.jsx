@@ -2,7 +2,7 @@ import * as React from "react";
 
 function HomeIcon({ fill = "#6C7281", ...rest }) {
   return (
-    <svg
+    <svg           
       width={24}
       height={24}
       fill="none"

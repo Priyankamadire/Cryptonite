@@ -2,7 +2,7 @@ import * as React from "react";
 
 function CollapsIcon({ fill = "#6C7281", ...rest }) {
   return (
-    <svg
+    <svg      
       width={16}
       height={15}
       fill="none"

@@ -47,7 +47,7 @@ const Rates = ({ coins }) => {
               <th className="py-2 px-4 border border-dark-300">(30d)%</th>
               <th className="py-2 px-4 border border-dark-300">(60d)%</th>
               <th className="py-2 px-4 border border-dark-300">(90d)%</th>
-            
+               
             </tr>
           </thead>
           <tbody className="text-dark-800">

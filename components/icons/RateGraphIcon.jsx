@@ -11,7 +11,7 @@ function RateGraphIcon({ stroke = "#6C7281", ...rest }) {
       {...rest}
     >
       <path
-        d="M3 3v18h18"
+        d="M3 3v18h18"   
         stroke={stroke}
         strokeWidth={2}
         strokeLinecap="round"

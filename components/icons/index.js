@@ -7,3 +7,4 @@ export { default as LogoIcon } from "./Logo";
 export { default as LogoutIcon } from "./LogoutIcon";
 export {default as RateGraphIcon} from "./RateGraphIcon"
 export {default as AboutIcon} from './AboutIcon'
+

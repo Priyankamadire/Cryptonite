@@ -101,7 +101,7 @@ export async function getServerSideProps(context) {
       props: {
         coinData: null,
         coinName: '',
-      },
+      },  
     };
   }
 }

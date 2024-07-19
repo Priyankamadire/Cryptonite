@@ -5,7 +5,7 @@ function LogoutIcon({ fill = "#6C7281", ...rest }) {
     <svg
       width={16}
       height={19}
-      fill="none"
+      fill="none"    
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >

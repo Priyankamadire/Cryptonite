@@ -7,4 +7,4 @@ const tutorials = () => {
   )
 }
 
-export default tutorials
+export default tutorials   

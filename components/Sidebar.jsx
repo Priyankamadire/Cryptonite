@@ -18,7 +18,7 @@ const menuItems = [
   { id: 4, label: "About Page", icon: AboutIcon, link: "/about" },
   { id: 5, label: "Changing Rate", icon: RateGraphIcon, link: "/rates" },
 
-  { id: 2, label: "Products", icon: ArticleIcon, link: "/products" },
+  { id: 2, label: "Coins", icon: ArticleIcon, link: "/products" },
   { id: 3, label: "Graph Rate", icon: RateGraphIcon, link: "/coin/[id]" },
 ];
 

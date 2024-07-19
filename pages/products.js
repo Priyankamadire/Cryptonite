@@ -93,7 +93,7 @@ export const getServerSideProps = async () => {
       },
       params: {
         id: '605e2ce9d41eae1066535f7c',
-      },
+      },  
     });
 
     const coins = response.data.data.coins;

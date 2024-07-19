@@ -7,4 +7,4 @@ const changingRate = () => {
   )
 }
 
-export default changingRate
+export default changingRate  
