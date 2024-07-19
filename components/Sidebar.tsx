@@ -15,7 +15,7 @@ import {
 interface MenuItem {
   id: number;
   label: string;
-  icon: React.ComponentType; // Use React.ComponentType for icons
+  icon: React.ComponentType; 
   link: string;
 }
 
