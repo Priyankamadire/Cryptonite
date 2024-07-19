@@ -125,7 +125,7 @@ const Sidebar: React.FC = () => {
       </div>
 
       <div className={`${getNavItemClasses({ id: -1, label: "", icon: LogoutIcon, link: "" })} px-3 py-4`}>
-        <LogoutIcon />
+        
       </div>
     </div>
   );
