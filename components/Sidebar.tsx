@@ -15,7 +15,7 @@ import {
 interface MenuItem {
   id: number;
   label: string;
-  icon: React.FunctionComponent; // Use React.FunctionComponent for icons
+  icon: React.ComponentType; // Use React.ComponentType for icons
   link: string;
 }
 
@@ -27,7 +27,7 @@ const menuItems: MenuItem[] = [
   { id: 3, label: "Graph Rate", icon: RateGraphIcon, link: "/coin/[id]" },
 ];
 
-const Sidebar: React.FunctionComponent = () => {
+const Sidebar: React.FC = () => {
   const [toggleCollapse, setToggleCollapse] = useState<boolean>(false);
   const [isCollapsible, setIsCollapsible] = useState<boolean>(false);
 
@@ -100,31 +100,32 @@ const Sidebar: React.FunctionComponent = () => {
         </div>
 
         <div className="flex flex-col items-start mt-24">
-          {menuItems.map((menu) => {
-            const { icon: Icon, ...rest } = menu;
-            const classes = getNavItemClasses(menu);
-            return (
-              <div key={menu.id} className={classes}>
-                <Link href={menu.link} passHref>
-                  <a className="flex py-4 px-3 items-center w-full h-full">
-                    <div style={{ width: "2.5rem" }}>
-                      <Icon />
-                    </div>
-                    {!toggleCollapse && (
-                      <span className="text-md font-medium text-text-light">
-                        {menu.label}
-                      </span>
-                    )}
-                  </a>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+  {menuItems.map((menu: any) => {
+    const { icon: Icon, ...rest } = menu;
+    const classes = getNavItemClasses(menu);
+    return (
+      <div key={menu.id} className={classes}>
+        <Link href={menu.link} passHref>
+          <a className="flex py-4 px-3 items-center w-full h-full">
+            <div style={{ width: "2.5rem" }}>
+              <Icon />
+            </div>
+            {!toggleCollapse && (
+              <span className="text-md font-medium text-text-light">
+                {menu.label}
+              </span>
+            )}
+          </a>
+        </Link>
+      </div>
+    );
+  })}
+</div>
+
       </div>
 
       <div className={`${getNavItemClasses({ id: -1, label: "", icon: LogoutIcon, link: "" })} px-3 py-4`}>
-        <LogoutIcon />
+    
       </div>
     </div>
   );
