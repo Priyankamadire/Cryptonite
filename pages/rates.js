@@ -33,6 +33,10 @@ const Rates = ({ coins }) => {
   return (
     <Layout>
       <h1 className="text-2xl font-bold text-blue-600 mb-4">Change of Rates</h1>
+      <center>
+      <h2 className="text-2xl font-bold text-blue-600 mb-4">Click On them to see Graph</h2>
+
+      </center>
       <div className="overflow-x-auto bg-dark-100 shadow-md rounded-lg p-4">
         <table className="min-w-full bg-dark border border-dark-300">
           <thead className="bg-blue-600 text-dark">

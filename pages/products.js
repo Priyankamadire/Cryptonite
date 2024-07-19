@@ -27,7 +27,7 @@ const Products = ({ coins }) => {
 
   return (
     <Layout>
-      <h1 className="text-2xl font-bold text-blue-600 mb-4"> </h1>
+      <h1 className="text-2xl font-bold text-blue-600 mb-4"> All Crypto Coins</h1>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-dark border border-dark-300">
           <thead className=" text-dark">
